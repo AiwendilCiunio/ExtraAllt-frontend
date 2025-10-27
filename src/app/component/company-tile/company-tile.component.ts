@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Company } from '../../model/company.model';
 
 @Component({
   selector: 'app-company-tile',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './company-tile.css',
 })
 export class CompanyTileComponent {
+
+  company = input.required<Company>();
 
 }

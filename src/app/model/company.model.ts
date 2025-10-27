@@ -4,5 +4,5 @@ export interface Company {
     ticker: string;
     description: string;
     pricePerShare: number;
-    availableShares: number;
+    // availableShares: number; //to be implemented later
 }
