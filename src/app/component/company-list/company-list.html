@@ -1,6 +1,6 @@
 <p>company-list works!</p>
 <ul>
     @for (company of companies(); track company.id) {
-    <app-company-tile [company]="company"></app-company-tile>
+    <app-company-tile [company]="company" (open)="openDialog($event)"></app-company-tile>
     }
 </ul>

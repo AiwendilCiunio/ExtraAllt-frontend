@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Company } from '../../model/company.model';
 
 @Component({
@@ -10,5 +10,11 @@ import { Company } from '../../model/company.model';
 export class CompanyTileComponent {
 
   company = input.required<Company>();
+  open = output<Company>();
+
+  openDialog() {
+    console.log('open dialog');
+    this.open.emit(this.company());
+  }
 
 }
