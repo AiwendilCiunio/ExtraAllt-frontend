@@ -9,6 +9,12 @@ export interface HoldingCreateDTO {
     pricePerShare: number
 }
 
+export interface HoldingUpdateDTO {
+    id: number,
+    pricePerShare: number,
+    quantity: number
+}
+
 @Injectable({ providedIn: 'root' })
 export class HoldingApiService {
 
@@ -23,5 +29,10 @@ export class HoldingApiService {
     createHolding(dto: HoldingCreateDTO): Observable<Holding> {
         console.log("creating holding...");
         return this.httpClient.post<Holding>(this.baseUrl, dto);
+    }
+
+    updateHolding(dto: HoldingUpdateDTO): Observable<Holding> {
+        console.log("updating holding...", dto);
+        return this.httpClient.patch<Holding>(this.baseUrl, dto);
     }
 }

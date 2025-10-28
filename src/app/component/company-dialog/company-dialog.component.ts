@@ -34,7 +34,7 @@ export class CompanyDialogComponent {
       pricePerShare: this.company.pricePerShare
     }
 
-    this.holdingService.createHolding(newHolding);
+    this.holdingService.buyShares(newHolding);
     console.log("calling holding service with", newHolding);
     this.dialogRef.close();
   }
