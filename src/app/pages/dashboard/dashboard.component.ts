@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { CompanyListComponent } from '../../component/company-list/company-list.component';
 import { CompanyService } from '../../service/company.service';
+import { EventListComponent } from "../../component/event-list/event-list.component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CompanyListComponent],
+  imports: [CompanyListComponent, EventListComponent],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })

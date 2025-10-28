@@ -1,1 +1,7 @@
 <p>event-list works!</p>
+<ul>
+    @for (message of messages(); track $index) {
+    <span>{{message.timestamp | date: 'mediumTime'}}</span>
+    <li>{{message.eventDescription}}</li>
+    }
+</ul>

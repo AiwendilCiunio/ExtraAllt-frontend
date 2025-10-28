@@ -14,7 +14,7 @@ export class CompanyService {
     constructor() {
         this.client = new Client({
             brokerURL: 'ws://localhost:8080/ws',
-            reconnectDelay: 5000,
+            reconnectDelay: 5000
         });
         this.client.onConnect = () => {
             console.log('connected to Websocket Broker');
