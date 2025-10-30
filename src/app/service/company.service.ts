@@ -2,6 +2,7 @@ import { inject, Inject, Injectable, signal } from "@angular/core";
 import { CompanyApiService } from "../api/company-api.service";
 import { Company } from "../model/company.model";
 import { Client } from '@stomp/stompjs';
+import { environment } from "../../environments/environment";
 
 @Injectable({ providedIn: 'root' })
 export class CompanyService {
@@ -10,10 +11,11 @@ export class CompanyService {
     companies = signal<Company[]>([]);
 
     private client: Client;
+    private brokerUrl = `${environment.brokerUrl}`;
 
     constructor() {
         this.client = new Client({
-            brokerURL: 'ws://localhost:8080/ws',
+            brokerURL: this.brokerUrl,
             reconnectDelay: 5000
         });
         this.client.onConnect = () => {
