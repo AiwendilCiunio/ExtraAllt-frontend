@@ -14,8 +14,8 @@ export class HoldingService {
     getAllHoldings(): void {
         this.holdingApiService.getAllHoldings().subscribe({
             next: (data) => {
-                this.holdings.set(data),
-                console.log('received holdings', data)
+                this.holdings.set(data ?? []),
+                    console.log('received holdings', data)
             },
             error: error => console.error('error fetching holdings', error)
         });
@@ -24,11 +24,12 @@ export class HoldingService {
 
     buyShares(dto: HoldingCreateDTO) {
         console.log("received holding", dto);
-        const holding = this.holdings().find(h => h.company.name === dto.companyName);
+        const currentHoldings = this.holdings() ?? [];
+        const holding = currentHoldings.find(h => h.company.name === dto.companyName);
 
         if (!holding) {
             this.holdingApiService.createHolding(dto).subscribe({
-                next: (data) => this.holdings.update(holdings => [...holdings, data]),
+                next: (data) => this.holdings.update(holdings => [...(holdings ?? []), data]),
                 error: error => console.error('Error creating holding', error)
             });
         } else {

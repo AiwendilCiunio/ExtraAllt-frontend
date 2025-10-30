@@ -22,7 +22,6 @@ export class CompanyListComponent {
     this.dialog.open(CompanyDialogComponent, {
       data: company,
       width: '400px',
-      height: '400px'
     });
   }
 

@@ -1,10 +1,11 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { HoldingService } from '../../service/holding.service';
+import { HoldingTileComponent } from '../holding-tile/holding-tile.component';
 
 @Component({
   selector: 'app-holding-list',
   standalone: true,
-  imports: [],
+  imports: [HoldingTileComponent],
   templateUrl: './holding-list.html',
   styleUrl: './holding-list.css',
 })

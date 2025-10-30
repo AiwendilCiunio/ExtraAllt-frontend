@@ -20,7 +20,7 @@ export class CompanyService {
             console.log('connected to Websocket Broker');
             this.client.subscribe('/topic/market/changes', message => {
                 const updated: Company[] = JSON.parse(message.body);
-                console.log('Update received', updated);
+                // console.log('Update received', updated);
                 this.companies.update(current => {
                     const updateMap = new Map(updated.map(c => [c.id, c]));
                     return current.map(c => updateMap.get(c.id) ?? c);

@@ -7,6 +7,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { Holding } from '../../model/holding.model';
 import { HoldingService } from '../../service/holding.service';
 import { HoldingCreateDTO } from '../../api/holding-api.service';
+import { PaymentApiService } from '../../api/payment-api.service';
+
 
 
 @Component({
@@ -19,6 +21,7 @@ import { HoldingCreateDTO } from '../../api/holding-api.service';
 export class CompanyDialogComponent {
 
   private holdingService = inject(HoldingService);
+  private paymentApiService = inject(PaymentApiService);
 
   company: Company = inject(MAT_DIALOG_DATA);
   dialogRef = inject(MatDialogRef<CompanyDialogComponent>);
@@ -27,6 +30,10 @@ export class CompanyDialogComponent {
 
   buy() {
     console.log('buying', this.quantity, 'shares of', this.company.name);
+
+    // TODO - test after deploying
+    // const paymentRequest = { amount: this.quantity * this.company.pricePerShare, description: this.company.name };
+    // this.paymentApiService.checkout(paymentRequest);
 
     const newHolding: HoldingCreateDTO = {
       companyName: this.company.name,

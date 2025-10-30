@@ -1,9 +1,6 @@
 <p>holding-list works!</p>
 <ul>
     @for (holding of holdings(); track holding.id) {
-    <li>{{holding.company.name}}</li>
-    <li>{{holding.quantity}}</li>
-    <li>{{holding.averagePrice}}</li>
-    <li>{{holding.lastUpdated}}</li>
+    <app-holding-tile [holding]="holding"></app-holding-tile>
     }
 </ul>

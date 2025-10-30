@@ -18,8 +18,8 @@ export class MessageService {
             console.log('connected to Websocket Broker');
             this.client.subscribe('/topic/market/messages', message => {
                 const events: EventMessage[] = JSON.parse(message.body);
-                console.log('Messages update received', events);
-                this.messages.update(current => [...events.reverse(), ...current]);
+                // console.log('Messages update received', events);
+                this.messages.update(current => [...events, ...current]);
             });
         };
 
