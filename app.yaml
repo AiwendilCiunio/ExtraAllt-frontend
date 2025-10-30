@@ -1,0 +1,11 @@
+name: stocksimulator-frontend
+region: fra
+services:
+  - name: frontend
+    environment_slug: node-js
+    build_command: npm install && npm run build -- --configuration production
+    run_command: ''
+    output_dir: dist/stocksimulator-frontend/browser
+    routes:
+      - path: /*
+        rewrite: /index.html
