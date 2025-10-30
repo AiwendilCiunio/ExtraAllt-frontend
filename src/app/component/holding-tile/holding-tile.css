@@ -1,0 +1,30 @@
+.holding-tile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    background-color: #f8f9fa;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    cursor: default;
+}
+
+.holding-tile:hover {
+    background-color: #f1f3f5;
+    transform: scale(1.01);
+}
+
+.holding-name {}
+
+.holding-details {
+    font-size: 0.9rem;
+    color: #333;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.label {
+    font-weight: 500;
+    color: #06d6a0;
+}

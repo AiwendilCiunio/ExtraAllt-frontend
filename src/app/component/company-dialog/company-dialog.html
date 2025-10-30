@@ -1,11 +1,17 @@
-<h3>{{company.name}}</h3>
-<p>{{company.ticker}}</p>
-<p>{{company.description}}</p>
-<strong>{{company.pricePerShare}}</strong>
+<div class="dialog-container">
+  <h3 class="dialog-title">{{ company.name }}</h3>
+  <p class="ticker">{{ company.ticker }}</p>
+  <p class="description">{{ company.description }}</p>
 
-<mat-form-field>
-    <mat-label>Quantity</mat-label>
+  <div class="price">Price per share: {{ company.pricePerShare }}</div>
+
+  <mat-form-field appearance="outline" class="quantity-field">
+    <mat-label>How many shares do you want to buy?</mat-label>
     <input matInput type="number" [(ngModel)]="quantity" min="1">
-</mat-form-field>
-<button (click)="dialogRef.close()">Cancel</button>
-<button (click)="buy()">Buy</button>
+  </mat-form-field>
+
+  <div class="dialog-actions">
+    <button mat-stroked-button class="cancel-btn" (click)="dialogRef.close()">Cancel</button>
+    <button mat-flat-button class="buy-btn" (click)="buy()">Buy</button>
+  </div>
+</div>

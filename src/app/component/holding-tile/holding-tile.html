@@ -1,5 +1,9 @@
-<li>
-    {{ holding().company.name }}, 
-    {{ holding().quantity }}, 
-    {{ holding().averagePrice }}
+<li class="holding-tile">
+    <div class="holding-name">{{ holding().company.name }}</div>
+    <div class="holding-details">
+        <span class="label">Owned shares:</span>
+        {{ holding().quantity }}
+        <span class="label">Avg price per share:</span>
+        {{ holding().averagePrice }}
+    </div>
 </li>

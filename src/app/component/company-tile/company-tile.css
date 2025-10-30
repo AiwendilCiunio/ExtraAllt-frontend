@@ -1,0 +1,14 @@
+li {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ececec;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+
+}
+
+li:hover {
+    /* background-color: #f8f9fa; */
+    background-color: #f1f3f5;
+    transform: scale(1.01);
+}

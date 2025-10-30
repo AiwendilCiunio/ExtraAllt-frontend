@@ -1,0 +1,13 @@
+body,
+html {
+    margin: 0;
+    height: 100%;
+}
+
+.main-content {
+    padding-top: 60px;
+    /* leaving space for fixed header */
+    min-height: calc(100vh - 60px);
+    background-color: #f8f9fa;
+    font-family: 'Inter', Arial, sans-serif;
+}

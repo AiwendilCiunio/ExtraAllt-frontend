@@ -1,4 +1,4 @@
-<p>company-list works!</p>
+<h3>Available companies</h3>
 <ul>
     @for (company of companies(); track company.id) {
     <app-company-tile [company]="company" (open)="openDialog($event)"></app-company-tile>
