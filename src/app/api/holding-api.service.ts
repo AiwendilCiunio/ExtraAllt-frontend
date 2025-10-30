@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Holding } from "../model/holding.model";
+import { environment } from "../../environments/environment";
 
 export interface HoldingCreateDTO {
     companyName: string,
@@ -19,7 +20,7 @@ export interface HoldingUpdateDTO {
 export class HoldingApiService {
 
     private httpClient = inject(HttpClient);
-    private baseUrl = 'http://localhost:8080/api/holdings';
+    private baseUrl = `${environment.baseUrl}/api/holdings`;
 
     getAllHoldings(): Observable<Holding[]> {
         console.log("getting holdings...");

@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { loadStripe, Stripe } from '@stripe/stripe-js';
 import { firstValueFrom } from 'rxjs';
+import { environment } from "../../environments/environment";
 
 export interface PaymentRequest {
     amount: number;
@@ -16,7 +17,7 @@ interface CheckoutSessionResponse {
 export class PaymentApiService {
 
     private httpClient = inject(HttpClient);
-    private baseUrl = 'http://localhost:8080/api/payments';
+    private baseUrl = `${environment.baseUrl}/api/payments`;
     private stripePromise: Promise<Stripe | null> = loadStripe(
         'pk_test_51QzCiuEPswyT3q8Mi1sRJhxYD1wjikNJojC8Tc6Zg94s9mkMor8MBlxcQDtbKFA6qqPuo5AAfcNPmHJo5oYBriY300a3GeceR1'
     );
