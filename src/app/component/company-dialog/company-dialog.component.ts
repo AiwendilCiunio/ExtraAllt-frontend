@@ -32,8 +32,8 @@ export class CompanyDialogComponent {
     console.log('buying', this.quantity, 'shares of', this.company.name);
 
     // TODO - test after deploying
-    // const paymentRequest = { amount: this.quantity * this.company.pricePerShare, description: this.company.name };
-    // this.paymentApiService.checkout(paymentRequest);
+    const paymentRequest = { amount: this.quantity * this.company.pricePerShare, description: this.company.name };
+    this.paymentApiService.checkout(paymentRequest);
 
     const newHolding: HoldingCreateDTO = {
       companyName: this.company.name,
