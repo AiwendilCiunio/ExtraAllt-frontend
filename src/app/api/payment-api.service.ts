@@ -22,8 +22,11 @@ export class PaymentApiService {
         'pk_test_51QzCiuEPswyT3q8Mi1sRJhxYD1wjikNJojC8Tc6Zg94s9mkMor8MBlxcQDtbKFA6qqPuo5AAfcNPmHJo5oYBriY300a3GeceR1'
     );
 
+
+
     async checkout(request: PaymentRequest) {
         try {
+            console.log('checking out', request);
             const response = await firstValueFrom(
                 this.httpClient.post<CheckoutSessionResponse>(`${this.baseUrl}/checkout`, request)
             );
